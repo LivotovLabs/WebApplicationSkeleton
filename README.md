@@ -1,4 +1,4 @@
-# WebApplicationSkeleton
+# Web Application Skeleton
 
 This is a ready to use lightweight and scalable web-application skeleton, which contains all the major modules, typically required for every project - backend, REST API with client, web UI. Without the fat JEE stuff.
 
@@ -13,3 +13,6 @@ This is a ready to use lightweight and scalable web-application skeleton, which 
 Each part contains the complete working sample for easy copying and extending
 
 Entire skeleton is managed by the gradle build scripts and runnable out of the box. Also, thanks to the great gradle support in Intellij IDEA, it is simple to create the IDE project for the skeleton - just import the root folder from your IDEA and it will take over.
+
+## P.S. 
+If you're inetersted - the skeleton files will be committed in several days, stay tuned.
