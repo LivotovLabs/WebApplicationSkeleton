@@ -1,6 +1,6 @@
 # Web Application Skeleton
 
-This is a ready to use lightweight and scalable web-application skeleton, which contains all the major modules, typically required for every project - backend, REST API with client, web UI. Without the fat JEE stuff.
+This is a ready to use, pure Java, lightweight and scalable, without the fat JEE stuff, web-application skeleton, which contains all the major modules, typically required for every project - backend, REST API with client, web UI. 
 
 ## Parts included
 - Self-running server (Jetty powered) but can be also deployed as a WAR file to other servlter container
