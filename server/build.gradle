@@ -1,0 +1,86 @@
+/*
+ * Copyright 2015 Livotov Labs Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply from: 'http://plugins.jasoft.fi/vaadin.plugin'
+
+repositories {
+    mavenCentral()
+    maven { url 'http://maven.vaadin.com/vaadin-addons' }
+}
+
+configurations {
+    justWar
+}
+
+artifacts {
+    justWar war
+}
+
+dependencies {
+    // Logging subsystem
+    compile 'org.slf4j:slf4j-api:1.7.5'
+
+    // REST Api client modules for model usage
+    compile project(':client')
+
+    // REST
+    compile 'com.sun.jersey:jersey-core:1.19'
+    compile 'com.sun.jersey:jersey-server:1.19'
+    compile 'com.sun.jersey:jersey-servlet:1.19'
+    compile 'com.sun.jersey:jersey-json:1.19'
+    compile 'com.sun.jersey.contribs:jersey-guice:1.19'
+    compile 'org.codehaus.jackson:jackson-core-asl:1.9.13'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+    compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
+    compile 'org.codehaus.jackson:jackson-xc:1.9.13'
+
+    // Job scheduling
+    compile 'org.quartz-scheduler:quartz:2.2.1'
+
+    // Embedded H2 database as default one
+    compile 'com.h2database:h2:1.4.187'
+
+    // Google Guice for Injection
+    compile 'com.google.inject:guice:4.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.0'
+    compile 'com.google.inject.extensions:guice-persist:4.0'
+    compile 'com.google.inject.extensions:guice-multibindings:4.0'
+
+    // Hibernate ORM for persistence
+    compile 'org.hibernate:hibernate-core:4.3.10.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
+
+    // Vaadin for web apps UI
+    // IMPORNANT!!! : This is an IDEA-only hack for syntax highlight. Actual dependencies are automatically managed by the vaadin-gradle plugin.
+    // When migrating to another Vaadin version, do not forget to change it here and also at the bottom of this script, in the vaadin {} section.
+    compile 'com.vaadin:vaadin-client:7.5.1'
+
+    // Aux deps for compile time only
+    providedCompile 'javax.servlet:servlet-api:3+'
+}
+
+vaadin {
+    version = '7.5.1'
+    push = false
+    debug = false
+    profiler = false
+    manageDependencies = true
+    widgetset 'eu.livotov.labs.webskel'
+    manageWidgetset = true
+}
