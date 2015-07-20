@@ -25,4 +25,4 @@ Checkout and run ```gradle appStartWar``` , then go to:
 - Explore the sources
 - Copy and adjust for your own project
 
-Documentation and code insight will be addad later.
+Documentation and code insight will be added later.
