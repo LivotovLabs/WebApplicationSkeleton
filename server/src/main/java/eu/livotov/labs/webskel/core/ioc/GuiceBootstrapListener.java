@@ -22,9 +22,9 @@ import com.google.inject.persist.PersistFilter;
 import com.google.inject.persist.jpa.JpaPersistModule;
 import com.google.inject.servlet.GuiceServletContextListener;
 import com.google.inject.servlet.ServletModule;
-import eu.livotov.labs.webskel.api.v1.RestApiModule;
-import eu.livotov.labs.webskel.app.MainUIServlet;
-import eu.livotov.labs.webskel.core.quartz.GuiceQuartzModule;
+import eu.livotov.labs.webskel.api.v1.RestApiGuiceModule;
+import eu.livotov.labs.webskel.app.WebappsGuiceModule;
+import eu.livotov.labs.webskel.core.quartz.QuartzTimerGuiceModule;
 
 import javax.servlet.annotation.WebListener;
 
@@ -41,10 +41,10 @@ public class GuiceBootstrapListener extends GuiceServletContextListener
             protected void configureServlets()
             {
                 install(new JpaPersistModule("webskelJpaUnit"));
-                install(new RestApiModule());
-                install(new GuiceQuartzModule());
                 filter("/*").through(PersistFilter.class);
-                serve("/*").with(MainUIServlet.class);
+                install(new QuartzTimerGuiceModule());
+                install(new RestApiGuiceModule());
+                install(new WebappsGuiceModule());
             }
         });
     }

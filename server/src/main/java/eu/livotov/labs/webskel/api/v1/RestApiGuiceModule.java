@@ -26,7 +26,7 @@ import javax.ws.rs.ext.MessageBodyReader;
 import javax.ws.rs.ext.MessageBodyWriter;
 import java.util.HashMap;
 
-public class RestApiModule extends ServletModule
+public class RestApiGuiceModule extends ServletModule
 {
 
     @Override

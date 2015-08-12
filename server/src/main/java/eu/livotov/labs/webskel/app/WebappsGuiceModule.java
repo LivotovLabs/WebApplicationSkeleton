@@ -14,21 +14,17 @@
  * limitations under the License.
  */
 
-package eu.livotov.labs.webskel.core.quartz;
+package eu.livotov.labs.webskel.app;
 
-import eu.livotov.labs.webskel.core.quartz.guice.QuartzModule;
-import eu.livotov.labs.webskel.core.quartz.jobs.SimpleEchoJob;
+import com.google.inject.servlet.ServletModule;
 
-
-public class GuiceQuartzModule extends QuartzModule
+public class WebappsGuiceModule extends ServletModule
 {
 
     @Override
-    protected void schedule()
+    protected void configureServlets()
     {
-//        addJobListener( com.acme.MyJobListener.class );
-//        addTriggerListener( com.acme.MyTriggerListener.class );
-//        addSchedulerListener( com.acme.MySchedulerListener.class );
-        scheduleJob(SimpleEchoJob.class);
+        serve("/*").with(MainUIServlet.class);
+
     }
 }
