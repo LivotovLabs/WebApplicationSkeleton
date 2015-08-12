@@ -17,10 +17,10 @@ Entire skeleton is managed by the gradle build scripts and runnable out of the b
 it is simple to create the IDE project for the skeleton - just import the root folder from your IDEA and it will take over.
 
 ## Quick Test
-Checkout and run ```gradle appStartWar``` , then go to:
+Checkout and run ```./gradlew appStartWar``` , then go to:
 
-- http://localhost:8080/server for the web UI skeleton
-- http://localhost:8080/server/api/v1/log for the sample REST resource
+- http://localhost:8080 for the web UI skeleton
+- http://localhost:8080/api/v1/log for the sample REST resource
 - Run the ```eu.livotov.labs.webskel.client.v1.ApiClient.java``` class from the ```client``` module to check the REST API client
 - Explore the sources
 - Copy and adjust for your own project
