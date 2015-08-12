@@ -84,3 +84,9 @@ vaadin {
     widgetset 'eu.livotov.labs.webskel'
     manageWidgetset = true
 }
+
+gretty {
+    port = 8080
+    contextPath = '/'
+    jvmArgs = ['-Xmx512m', '-Xmx1G']
+}
