@@ -66,17 +66,12 @@ dependencies {
     compile 'org.hibernate:hibernate-core:4.3.10.Final'
     compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
 
-    // Vaadin for web apps UI
-    // IMPORNANT!!! : This is an IDEA-only hack for syntax highlight. Actual dependencies are automatically managed by the vaadin-gradle plugin.
-    // When migrating to another Vaadin version, do not forget to change it here and also at the bottom of this script, in the vaadin {} section.
-    compile 'com.vaadin:vaadin-client:7.5.1'
-
     // Aux deps for compile time only
     providedCompile 'javax.servlet:servlet-api:3+'
 }
 
 vaadin {
-    version = '7.5.1'
+    version = '7.5.8'
     push = false
     debug = false
     profiler = false
