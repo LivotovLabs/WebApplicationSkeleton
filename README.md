@@ -9,9 +9,9 @@ Use it as starting point for your new Java Web App - just copy to your new proje
 - IoC by Google Guice v4
 - Timer services by Quartz
 - Database objects management by Hibernate
-- REST API, based on Jersey (server) and Retrofit (client connector)
-- Web UI by Vaadin v7
-- Embedded web server runner, so you can deploy it right from git - pull and then run appStartWar gradle task.
+- REST API, based on Jersey (server side) and Retrofit (client side)
+- Web UI examples: one by by Vaadin v7 ("server" module), another one by Apache Wicket ("front" module)
+- Embedded gretty web runner, so you can deploy it right from git - pull and run appStartWar gradle task.
 
 Each part contains the complete working sample for easy copying and extending.
 
@@ -22,7 +22,6 @@ Clone from git and run ```./gradlew appStartWar``` gradle task, then go to:
 
 - http://localhost:8080 for the web UI skeleton
 - http://localhost:8080/api/v1/log for the sample REST resource
-- Run the ```eu.livotov.labs.webskel.client.v1.ApiClient.java``` class (it contains the main() method) from the ```client``` module to check the REST API client sample.
 - Explore the sources
 - Copy and adjust for your own project
 

@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
-include 'api'
-include 'server'
-include 'front'
+apply plugin: 'java'
 
-rootProject.name = 'WebApplicationSkeleton'
+repositories {
+    mavenCentral()
+}
 
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    // For debug logging
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+}
 

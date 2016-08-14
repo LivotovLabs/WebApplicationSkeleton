@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Livotov Labs Ltd.
+ * Copyright 2016 Livotov Labs Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
-include 'api'
-include 'server'
-include 'front'
+package eu.livotov.labs.webskel.bootstrap;
 
-rootProject.name = 'WebApplicationSkeleton'
+import com.google.inject.servlet.GuiceFilter;
 
+import javax.servlet.annotation.WebFilter;
 
+@WebFilter(urlPatterns = "/*")
+public class GuiceMasterServletFilter extends GuiceFilter
+{
+
+}

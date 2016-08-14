@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Livotov Labs Ltd.
+ * Copyright 2016 Livotov Labs Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,23 @@
  * limitations under the License.
  */
 
-include 'api'
-include 'server'
-include 'front'
+package com.knxcube.front.app.pages;
 
-rootProject.name = 'WebApplicationSkeleton'
+import com.google.inject.Inject;
+import com.google.inject.Injector;
 
+/**
+ * (c) Livotov Labs Ltd. 2012
+ * Date: 25/06/2016
+ */
+public class StartPage extends BasePage
+{
 
+    @Inject private Injector injector;
+
+    @Override
+    protected void onInitialize()
+    {
+        super.onInitialize();
+    }
+}

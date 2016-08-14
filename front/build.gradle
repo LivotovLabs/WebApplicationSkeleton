@@ -1,0 +1,63 @@
+/*
+ * Copyright 2016 Livotov Labs Ltd.
+ *
+ */
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    justWar
+}
+
+artifacts {
+    justWar war
+}
+
+dependencies {
+    // Logging subsystem
+    compile 'org.slf4j:slf4j-api:1.7.5'
+
+    // REST Api client modules for model usage
+    compile project(':api')
+
+    // EventBus
+    compile 'net.engio:mbassador:1.2.4.2'
+
+    // Google Guice for Injection
+    compile 'com.google.inject:guice:4.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.0'
+    compile 'com.google.inject.extensions:guice-persist:4.0'
+    compile 'com.google.inject.extensions:guice-multibindings:4.0'
+
+    // Apache Wicket
+    compile 'org.apache.wicket:wicket-core:7.3.0'
+    compile 'org.apache.wicket:wicket-guice:7.3.0'
+    compile 'org.apache.wicket:wicket-extensions:7.3.0'
+    compile 'org.apache.wicket:wicket-auth-roles:7.3.0'
+
+    compile 'de.agilecoders.wicket:wicket-bootstrap-core:0.10.6'
+    compile 'de.agilecoders.wicket:wicket-bootstrap-extensions:0.10.6'
+    compile 'de.agilecoders.wicket:wicket-bootstrap-themes:0.10.6'
+
+//    compile 'de.agilecoders.wicket.webjars:wicket-webjars:0.5.4'
+//    compile 'org.webjars.bower:fontawesome:4.6.3'
+//    compile 'org.webjars.bower:simple-line-icons:1.0.0'
+
+    // Aux deps for compile time only
+    providedCompile 'javax.servlet:servlet-api:3+'
+}
+
+gretty {
+    port = 8888
+    contextPath = '/'
+    //managedClassReload = true
+    //fastReload = true
+    //inplaceMode = true
+    jvmArgs = ['-Xmx512m', '-Xmx1G']
+}

@@ -1,14 +1,5 @@
-# IntelliJ IDEA Project Files
-.idea
 *.iml
-*.jpr
-
-# Java output
-build
-
-# Private settings
-local.properties
-
-# Gradle
 .gradle
-
+.idea
+build/
+client/build/

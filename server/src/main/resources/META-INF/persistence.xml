@@ -23,17 +23,23 @@
     <!-- A JPA Persistence Unit -->
     <persistence-unit name="webskelJpaUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <!--<jta-data-source>jdbc/shifu</jta-data-source>-->
         <properties>
+
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.archive.autodetection" value="class" />
             <property name="hibernate.id.new_generator_mappings" value="true" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
 
+            <!-- PostgreSQL connection -->
+            <!--<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/knxcube?user=knxcube&amp;password=r24yg1bz" />-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect" />-->
+            <!--<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />-->
+
+            <!-- Embedded H2 connection -->
             <property name="hibernate.connection.driver_class" value="org.h2.Driver" />
             <property name="hibernate.connection.url" value="jdbc:h2:mem:test" />
 
-            <!--<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />-->
-            <!--jdbc:h2:mem:test-->
         </properties>
     </persistence-unit>
 

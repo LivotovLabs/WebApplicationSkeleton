@@ -37,7 +37,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.5'
 
     // REST Api client modules for model usage
-    compile project(':client')
+    compile project(':api')
 
     // REST
     compile 'com.sun.jersey:jersey-core:1.19'
@@ -53,8 +53,14 @@ dependencies {
     // Job scheduling
     compile 'org.quartz-scheduler:quartz:2.2.1'
 
+    // EventBus
+    compile 'net.engio:mbassador:1.2.4.2'
+
     // Embedded H2 database as default one
     compile 'com.h2database:h2:1.4.187'
+
+    // PostgreSQL
+    compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
 
     // Google Guice for Injection
     compile 'com.google.inject:guice:4.0'
@@ -62,16 +68,17 @@ dependencies {
     compile 'com.google.inject.extensions:guice-persist:4.0'
     compile 'com.google.inject.extensions:guice-multibindings:4.0'
 
+
     // Hibernate ORM for persistence
-    compile 'org.hibernate:hibernate-core:4.3.10.Final'
-    compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
+    compile 'org.hibernate:hibernate-core:5.2.1.Final'
+    compile 'org.hibernate:hibernate-entitymanager:5.2.1.Final'
 
     // Aux deps for compile time only
     providedCompile 'javax.servlet:servlet-api:3+'
 }
 
 vaadin {
-    version = '7.5.8'
+    version = '7.6.8'
     push = false
     debug = false
     profiler = false

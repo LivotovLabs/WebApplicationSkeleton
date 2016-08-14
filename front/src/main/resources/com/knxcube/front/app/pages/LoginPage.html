@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright (c) 2016. Livotov Labs Ltd.
+  -->
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
+
+<wicket:extend>
+
+    <p>SIGN IN TO CONTINUE.</p>
+    <form method="post" wicket:id="loginForm">
+        <input id="exampleInputEmail1" wicket:id="username" type="email" placeholder="Enter email" autocomplete="off"
+               required>
+        <input id="exampleInputPassword1" wicket:id="password" type="password" placeholder="Password" required>
+        <input wicket:id="rememberme" type="checkbox" value="" name="remember">
+        <button type="submit">Login</button>
+    </form>
+
+    <wicket:container wicket:id="errorMessage"/>
+    <wicket:container wicket:id="footer"/>
+
+</wicket:extend>
+
+</html>

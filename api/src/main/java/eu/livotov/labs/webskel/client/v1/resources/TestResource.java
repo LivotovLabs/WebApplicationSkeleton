@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 
-include 'api'
-include 'server'
-include 'front'
+package eu.livotov.labs.webskel.client.v1.resources;
 
-rootProject.name = 'WebApplicationSkeleton'
+import eu.livotov.labs.webskel.client.v1.model.LogResult;
+import retrofit2.http.GET;
 
+public interface TestResource
+{
 
+    @GET("/log")
+    public LogResult getLogs();
+
+}
