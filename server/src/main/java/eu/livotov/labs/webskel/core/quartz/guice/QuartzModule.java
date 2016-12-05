@@ -150,34 +150,41 @@ public abstract class QuartzModule extends AbstractModule
      */
     protected final eu.livotov.labs.webskel.core.quartz.guice.JobSchedulerBuilder scheduleJob(Class<? extends Job> jobClass)
     {
-        eu.livotov.labs.webskel.core.quartz.guice.JobSchedulerBuilder builder = new eu.livotov.labs.webskel.core.quartz.guice.JobSchedulerBuilder(jobClass);
-
-        if (jobClass.isAnnotationPresent(Scheduled.class))
+        try
         {
-            Scheduled scheduled = jobClass.getAnnotation(Scheduled.class);
+            eu.livotov.labs.webskel.core.quartz.guice.JobSchedulerBuilder builder = new eu.livotov.labs.webskel.core.quartz.guice.JobSchedulerBuilder(jobClass);
 
-            builder
-                    // job
-                    .withJobName(scheduled.jobName())
-                    .withJobGroup(scheduled.jobGroup())
-                    .withRequestRecovery(scheduled.requestRecovery())
-                    .withStoreDurably(scheduled.storeDurably())
-                             // trigger
-                    .withCronExpression(scheduled.cronExpression())
-                    .withTriggerName(scheduled.triggerName());
-
-            if (!Scheduled.DEFAULT.equals(scheduled.timeZoneId()))
+            if (jobClass.isAnnotationPresent(Scheduled.class))
             {
-                TimeZone timeZone = getTimeZone(scheduled.timeZoneId());
-                if (timeZone != null)
+                Scheduled scheduled = jobClass.getAnnotation(Scheduled.class);
+
+                builder
+                        // job
+                        .withJobName(scheduled.jobName())
+                        .withJobGroup(scheduled.jobGroup())
+                        .withRequestRecovery(scheduled.requestRecovery())
+                        .withStoreDurably(scheduled.storeDurably())
+                        // trigger
+                        .withCronExpression(scheduled.cronExpression())
+                        .withTriggerName(scheduled.triggerName());
+
+                if (!Scheduled.DEFAULT.equals(scheduled.timeZoneId()))
                 {
-                    builder.withTimeZone(timeZone);
+                    TimeZone timeZone = getTimeZone(scheduled.timeZoneId());
+                    if (timeZone != null)
+                    {
+                        builder.withTimeZone(timeZone);
+                    }
                 }
             }
-        }
 
-        requestInjection(builder);
-        return builder;
+            requestInjection(builder);
+            return builder;
+        } catch (Throwable err)
+        {
+            err.printStackTrace();
+            return null;
+        }
     }
 
     /**

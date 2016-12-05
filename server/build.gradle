@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
+plugins {
+    id 'fi.jasoft.plugin.vaadin' version '1.0'
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
-apply from: 'http://plugins.jasoft.fi/vaadin.plugin'
+apply plugin: 'org.akhikhl.gretty'
+apply plugin: 'idea'
 
 repositories {
     mavenCentral()
@@ -63,10 +67,10 @@ dependencies {
     compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
 
     // Google Guice for Injection
-    compile 'com.google.inject:guice:4.0'
-    compile 'com.google.inject.extensions:guice-servlet:4.0'
-    compile 'com.google.inject.extensions:guice-persist:4.0'
-    compile 'com.google.inject.extensions:guice-multibindings:4.0'
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.1.0'
+    compile 'com.google.inject.extensions:guice-persist:4.1.0'
+    compile 'com.google.inject.extensions:guice-multibindings:4.1.0'
 
 
     // Hibernate ORM for persistence
@@ -78,17 +82,11 @@ dependencies {
 }
 
 vaadin {
-    version = '7.6.8'
+    version = '7.7.5'
     push = false
     debug = false
     profiler = false
     manageDependencies = true
     widgetset 'eu.livotov.labs.webskel'
     manageWidgetset = true
-}
-
-gretty {
-    port = 8080
-    contextPath = '/'
-    jvmArgs = ['-Xmx512m', '-Xmx1G']
 }

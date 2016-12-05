@@ -23,7 +23,7 @@ import org.quartz.JobExecutionException;
 import javax.inject.Singleton;
 
 @Singleton
-@Scheduled(jobName = "simple-echo", cronExpression = "0 0/1 * 1/1 * ? *")
+@Scheduled(jobName = "simple-echo2", cronExpression = "0 0/1 * 1/1 * ? *")
 public class SimpleEchoJob implements org.quartz.Job
 {
 

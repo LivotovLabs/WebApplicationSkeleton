@@ -5,7 +5,7 @@
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+apply plugin: 'org.akhikhl.gretty'
 
 repositories {
     mavenCentral()
@@ -30,10 +30,10 @@ dependencies {
     compile 'net.engio:mbassador:1.2.4.2'
 
     // Google Guice for Injection
-    compile 'com.google.inject:guice:4.0'
-    compile 'com.google.inject.extensions:guice-servlet:4.0'
-    compile 'com.google.inject.extensions:guice-persist:4.0'
-    compile 'com.google.inject.extensions:guice-multibindings:4.0'
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'com.google.inject.extensions:guice-servlet:4.1.0'
+    compile 'com.google.inject.extensions:guice-persist:4.1.0'
+    compile 'com.google.inject.extensions:guice-multibindings:4.1.0'
 
     // Apache Wicket
     compile 'org.apache.wicket:wicket-core:7.3.0'
@@ -51,13 +51,4 @@ dependencies {
 
     // Aux deps for compile time only
     providedCompile 'javax.servlet:servlet-api:3+'
-}
-
-gretty {
-    port = 8888
-    contextPath = '/'
-    //managedClassReload = true
-    //fastReload = true
-    //inplaceMode = true
-    jvmArgs = ['-Xmx512m', '-Xmx1G']
 }

@@ -16,9 +16,9 @@
 
 package eu.livotov.labs.webskel.core.quartz;
 
+
 import eu.livotov.labs.webskel.core.quartz.guice.QuartzModule;
 import eu.livotov.labs.webskel.core.quartz.jobs.SimpleEchoJob;
-
 
 public class QuartzTimerGuiceModule extends QuartzModule
 {
