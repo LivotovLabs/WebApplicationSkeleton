@@ -17,6 +17,8 @@
 include 'api'
 include 'server'
 include 'front'
+include 'docs/manual'
+include 'docs/api'
 
 rootProject.name = 'WebApplicationSkeleton'
 

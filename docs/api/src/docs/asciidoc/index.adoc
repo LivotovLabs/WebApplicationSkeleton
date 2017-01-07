@@ -1,0 +1,6 @@
+include::revisions.adoc[]
+include::intro.adoc[]
+include::{generated}/overview.adoc[]
+include::{generated}/security.adoc[]
+include::{generated}/paths.adoc[]
+include::{generated}/definitions.adoc[]

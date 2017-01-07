@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Sample Swagger API for Template",
+    "version": "1.0.0",
+    "title": "Template Doc API",
+    "contact": "user@domain.com"
+  },
+  "host": "api.myhost.com",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "Stores"
+    },
+    {
+      "name": "Data Model"
+    }
+  ],
+  "paths": {
+    "/cities": {
+      "get": {
+        "tags": [
+          "Stores"
+        ],
+        "summary": "List of supported cities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-HEADER",
+            "in": "header",
+            "description": "Some sample header",
+            "required": false,
+            "type": "string",
+            "x-example": "xxx"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/CityInfo"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CityInfo": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID города"
+        },
+        "name": {
+          "type": "string",
+          "description": "Название города"
+        }
+      }
+    }
+  }
+}

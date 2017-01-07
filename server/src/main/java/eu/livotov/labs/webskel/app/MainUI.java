@@ -22,11 +22,7 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.themes.ValoTheme;
 import eu.livotov.labs.webskel.core.dao.LogsDao;
 
 @Theme("app")
@@ -46,28 +42,7 @@ public class MainUI extends UI
 
     protected void init(final VaadinRequest vaadinRequest)
     {
-        Label hello = new Label("Hello Web Skeleton WebApp User !");
-        hello.setStyleName(ValoTheme.LABEL_H1);
-
-        Button b = new Button("Log me now !");
-        b.setStyleName(ValoTheme.BUTTON_DANGER);
-        b.addClickListener(new Button.ClickListener()
-        {
-            public void buttonClick(final Button.ClickEvent event)
-            {
-                logsDao.addLogEntry("Hello, it is me you looking for...");
-            }
-        });
-
-        VerticalLayout root = new VerticalLayout();
-        root.setSizeFull();
-        root.setMargin(true);
-        root.setSpacing(true);
-        root.addComponent(hello);
-        root.addComponent(b);
-        root.setExpandRatio(hello, 1.0f);
-
-        setContent(root);
+        setContent(new DashboardView());
     }
 
 }

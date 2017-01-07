@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="design-properties"
+          content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:true,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;../../../server/src/main/java&quot;,&quot;THEME&quot;:&quot;app&quot;}">
+    <meta name="vaadin-version" content="7.7.0">
+</head>
+<body>
+<vaadin-horizontal-layout style-name="app-shell" responsive size-full>
+    <vaadin-css-layout style-name="navigation-bar-container" width="200px" height-full>
+        <vaadin-css-layout style-name="navigation-bar" size-full>
+            <vaadin-label style-name="logo" plain-text>
+                Application menu
+            </vaadin-label>
+            <vaadin-button icon="fonticon://FontAwesome/f0c9" style-name="menu borderless" plain-text _id="menuButton">
+                Menu
+            </vaadin-button>
+            <vaadin-css-layout style-name="navigation" width-full _id="menu">
+                <vaadin-button icon="fonticon://FontAwesome/f009" style-name="borderless" width-full plain-text
+                               _id="dashboard">
+                    Dashboard
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f201" style-name="borderless" width-full plain-text
+                               _id="reports">
+                    Reports
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f12e" style-name="borderless" width-full plain-text
+                               _id="customize">
+                    Customize
+                </vaadin-button>
+                <vaadin-button icon="fonticon://FontAwesome/f013" style-name="borderless" width-full plain-text
+                               _id="admin">
+                    Admin
+                </vaadin-button>
+            </vaadin-css-layout>
+        </vaadin-css-layout>
+    </vaadin-css-layout>
+    <vaadin-vertical-layout style-name="content-container" size-full :expand>
+        <vaadin-label style-name="view-title" plain-text _id="viewTitle">
+            View title
+        </vaadin-label>
+        <vaadin-css-layout size-full _id="content" :expand>
+            <vaadin-css-layout style-name="padding-right padding-bottom padding-left" size-full>
+                <vaadin-css-layout style-name="content-section padding" size-full></vaadin-css-layout>
+            </vaadin-css-layout>
+        </vaadin-css-layout>
+    </vaadin-vertical-layout>
+</vaadin-horizontal-layout>
+</body>
+</html>

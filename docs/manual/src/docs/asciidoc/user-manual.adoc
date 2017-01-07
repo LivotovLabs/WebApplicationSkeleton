@@ -1,0 +1,21 @@
+:lang: ru
+:last-update-label: Latest chage
+:chapter-label: Chapter
+:toc-title: Contents
+:version-label: Revision
+:copyright: Livotov Labs Ltd., 2017
+:orgname: Livotov Labs Ltd.
+:icons: font
+
+:productname: Server Application Skeleton
+
+{productname}
+=============
+{orgname}
+v1.0, 2017:
+Template Edition
+
+{productname} - is a complex server application skeleton from which you can quickly bootstrap your projects from simple
+webapp to complex multi-service app.
+
+include::ch1-introduction.adoc[]

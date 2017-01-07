@@ -13,12 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@import "../valo/valo.scss";
 
-@mixin app {
-  @include valo;
+apply plugin: 'org.asciidoctor.convert'
+
+repositories {
+    mavenCentral()
+    jcenter()
 }
 
-/* Add your theme selectors here */
+dependencies {
+}
 
-$v-background-color: #ff0000;
+asciidoctor {
+    sources {
+        include 'user-manual.adoc'
+    }
+    backends = ['html5','pdf']
+    outputDir file("${buildDir}")
+    attributes = [
+            doctype: 'book',
+            toc: 'left',
+            toclevels: '3',
+            numbered: '',
+            sectlinks: '',
+            sectanchors: '',
+            //hardbreaks: '',
+            generated: file("${buildDir}")
+    ]
+}
+
+
+
+
