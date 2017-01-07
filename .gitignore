@@ -1,5 +1,6 @@
 *.iml
 .gradle
 .idea
+.designer
 build/
 client/build/
