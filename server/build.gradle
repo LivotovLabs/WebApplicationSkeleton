@@ -54,11 +54,11 @@ dependencies {
     compile 'org.codehaus.jackson:jackson-jaxrs:1.9.13'
     compile 'org.codehaus.jackson:jackson-xc:1.9.13'
 
+    // ESB/AMPQ
+    compile group: 'org.apache.qpid', name: 'proton-j', version: '0.15.0'
+
     // Job scheduling
     compile 'org.quartz-scheduler:quartz:2.2.1'
-
-    // EventBus
-    compile 'net.engio:mbassador:1.2.4.2'
 
     // Embedded H2 database as default one
     compile 'com.h2database:h2:1.4.187'

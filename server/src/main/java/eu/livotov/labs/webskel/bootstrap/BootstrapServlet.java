@@ -16,24 +16,22 @@
 
 package eu.livotov.labs.webskel.bootstrap;
 
-import com.google.inject.Inject;
 import com.google.inject.Injector;
-import eu.livotov.labs.webskel.core.bus.SystemEventBus;
+import eu.livotov.labs.webskel.core.amq.AMQP10Consumer;
+import org.apache.qpid.proton.message.Message;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import java.io.IOException;
 
 /**
  * (c) Livotov Labs Ltd. 2012
  * Date: 14/08/2016
  */
 @WebServlet(value = "/bootstrapService", loadOnStartup = 1)
-public class BootstrapServlet extends HttpServlet
+public class BootstrapServlet extends HttpServlet implements AMQP10Consumer.MessageCallback
 {
-
-    @Inject
-    SystemEventBus eventBus;
 
     @Override
     public void init() throws ServletException
@@ -41,5 +39,20 @@ public class BootstrapServlet extends HttpServlet
         Injector injector = (Injector) getServletContext().getAttribute(Injector.class.getName());
         injector.injectMembers(this);
         super.init();
+
+        try
+        {
+            new AMQP10Consumer(this).subscribe("amqp://127.0.0.1:5672/xxx");
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+
+    public boolean onMessage(final AMQP10Consumer consumer, final Message message)
+    {
+        System.err.println("AMQP Message: " + message.getBody().toString());
+        return true;
     }
 }

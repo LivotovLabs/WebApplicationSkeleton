@@ -19,6 +19,7 @@ package eu.livotov.labs.webskel.api.v1;
 import com.google.inject.servlet.ServletModule;
 import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 import eu.livotov.labs.webskel.api.v1.resources.LogResource;
+import eu.livotov.labs.webskel.api.v1.resources.SendMessageResource;
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 
 import javax.inject.Singleton;
@@ -33,6 +34,7 @@ public class RestApiGuiceModule extends ServletModule
     protected void configureServlets()
     {
         bind(LogResource.class).in(Singleton.class);
+        bind(SendMessageResource.class).in(Singleton.class);
         bind(MessageBodyReader.class).to(JacksonJsonProvider.class);
         bind(MessageBodyWriter.class).to(JacksonJsonProvider.class);
 

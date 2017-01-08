@@ -40,7 +40,7 @@ allprojects {
 
 farms {
     farm 'DebugFarm', {
-        port = 8080
+        port = 8888
         jvmArgs = ['-Xmx512m', '-Xmx1G']
         webapp ':server', contextPath: '/backend', inplace: false
         webapp ':front', contextPath: '/', inplace: false
