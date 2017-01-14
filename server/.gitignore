@@ -1,6 +1,7 @@
 # GWT-compiled JS
 build/
 .gradle
+*.hprof
 src/main/webapp/VAADIN/widgetsets/*
 src/main/webapp/VAADIN/gwt-*
 src/main/resources/eu/livotov/labs/webskel.gwt.xml
