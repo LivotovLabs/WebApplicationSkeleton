@@ -87,6 +87,6 @@ vaadin {
     debug = false
     profiler = false
     manageDependencies = true
-    widgetset 'eu.livotov.labs.webskel'
+    widgetset 'llabsapptemplatepkg'
     manageWidgetset = true
 }
