@@ -21,8 +21,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
-        classpath 'org.akhikhl.gretty:gretty:1.2.4' //1.4.0 , 1.2.4
+        classpath 'org.akhikhl.gretty:gretty:2.0.0'
         classpath "io.github.swagger2markup:swagger2markup:1.0.1"
         classpath 'io.github.swagger2markup:swagger2markup-gradle-plugin:1.0.1'
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
@@ -40,7 +39,7 @@ allprojects {
 
 farms {
     farm 'DebugFarm', {
-        port = 8888
+        httpPort = 8888
         jvmArgs = ['-Xmx512m', '-Xmx1G']
         webapp ':server', contextPath: '/backend', inplace: false
         webapp ':front', contextPath: '/', inplace: false

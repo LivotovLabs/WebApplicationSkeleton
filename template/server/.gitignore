@@ -1,9 +1,11 @@
 # GWT-compiled JS
+# GWT-compiled JS
 build/
 .gradle
 *.hprof
 src/main/webapp/VAADIN/widgetsets/*
 src/main/webapp/VAADIN/gwt-*
-src/main/resources/llabsapptemplatepkg.gwt.xml
+src/main/resources/**.gwt.xml
 src/main/webapp/VAADIN/themes/app/styles.css
+src/main/webapp/VAADIN/themes/app/styles.css.gz
 src/main/webapp/VAADIN/themes/app/addons.scss

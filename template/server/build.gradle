@@ -15,13 +15,13 @@
  */
 
 plugins {
-    id 'fi.jasoft.plugin.vaadin' version '1.0'
+    id 'com.devsoap.plugin.vaadin' version '1.2.0'
+    id 'idea'
 }
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'org.akhikhl.gretty'
-apply plugin: 'idea'
 
 repositories {
     mavenCentral()
@@ -82,11 +82,7 @@ dependencies {
 }
 
 vaadin {
-    version = '7.7.5'
+    version = '8.1.1'
     push = false
-    debug = false
-    profiler = false
     manageDependencies = true
-    widgetset 'llabsapptemplatepkg'
-    manageWidgetset = true
 }
