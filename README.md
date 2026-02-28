@@ -1,3 +1,10 @@
+# Deprecation Notice
+
+This project is archived and no more maintained - use our latest KMP template that can be also used to build the WASM web app in Kotlin.
+https://github.com/LivotovLabs/KMPApplicationBootstrapTemplate
+
+-------------
+
 # Web Application Skeleton
 
 This is a ready to use, gradle powered, pure Java, lightweight and scalable and without the fat JEE stuff, web-application template, which contains all the major modules, typically required for every typical project - backend, REST API with client, web UI. 
